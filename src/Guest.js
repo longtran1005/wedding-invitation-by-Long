@@ -113,8 +113,8 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
   },
   {
     id: "mai",
-    name: "Mai",
-    formOfAddress: "hai chúng em",
+    name: "Thùy Mai",
+    formOfAddress: "hai chúng tớ",
     wish: `Chào mừng Mai đến với tiệc đám cưới phiên bản nhỏ gọn của chúng tớ ♡\n\nChúc cậu enjoy các phần nghe nhìn và các tiết mục cá nhân hóa mà chúng tớ đã chuẩn bị.\n\nWelcome chị! Đây là bữa tiệc intimate nên em hi vọng chị cảm nhận được đầy đủ không khí thân mật mà chúng em muốn truyền tải ^^`,
   },
   {
@@ -162,11 +162,8 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
 ]
 
 export function getGuestFromUrl() {
-  const pathGuestId = decodeURIComponent(window.location.pathname)
-    .split("/")
-    .filter(Boolean)[0]
   const params = new URLSearchParams(window.location.search)
-  const guestId = pathGuestId || params.get("guestId") || params.get("id") || params.get("guest")
+  const guestId = params.get("guest") || params.get("guestId") || params.get("id")
   const guest = guests.find((item) => item.id === guestId)
 
   return guest || {
