@@ -69,7 +69,7 @@ function App() {
         <div className="ceremony-visual">
           <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời:</h2>
           <p className="invitation-message">
-            bạn <strong className="guest-name">{guest.name}</strong> tới dự buổi tiệc cưới thân mật của hai chúng tôi ♡
+            <strong className="guest-name">{guest.name}</strong> tới dự buổi tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
           </p>
         </div>
         <p className="ceremony-date">Thời gian:<strong className="guest-name"> 14h - 17h Thứ 7 ngày 31/10/2026 </strong></p>
@@ -119,7 +119,7 @@ function App() {
         </a>
       </article>
 
-      <Reserve />
+      <Reserve guest={guest} />
     </main>
   )
 }

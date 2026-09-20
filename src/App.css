@@ -322,6 +322,7 @@
 .guest-name {
   color: #721215;
   font-weight: 700;
+  font-family: Arial, sans-serif;
 }
 
 .calendar {
@@ -487,6 +488,8 @@
   background: #fff;
   color: #51403b;
   font: inherit;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
 }
 
 .rsvp input[type="text"]:disabled {
