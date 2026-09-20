@@ -1,0 +1,1 @@
+Và sau một khoảng thời gian bên nhau, hôm nay chúng mình có một buổi tiệc nhỏ để kể chuyện này với mọi người.
