@@ -39,8 +39,8 @@ function App() {
 
       <article className="family-introduction" aria-labelledby="story-heading">
         <p className="story-heading" id="story-heading">
-          Và sau một khoảng thời gian bên nhau, hôm nay chúng mình có một buổi
-          tiệc nhỏ để kể chuyện này với mọi người.
+          Sau một khoảng thời gian chơi với nhau, hôm nay chúng mình có một buổi
+          tiệc nhỏ để kể chia sẻ niềm vui của mối duyên này với những người bạn thân thiết.
         </p>
 
         <div className="couple-introduction">
