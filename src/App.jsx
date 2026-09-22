@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './App.css'
 import couplePhoto from '../images/LVT02675re.jpg'
 import couplePhoto2 from '../images/LVT02483re.jpg'
@@ -5,11 +6,33 @@ import bridePhoto from '../images/DSCF3662re.JPG'
 import groomPhoto from '../images/LVT02609cr.jpg'
 import brideSticker from '../images/sticker/bride-sticker.png'
 import groomSticker from '../images/sticker/groom-sticker.png'
+import flower1 from '../images/flower/flower1.png'
+import flower2 from '../images/flower/flower2.png'
+import flower3 from '../images/flower/flower3.png'
 import Reserve from "./Reserve.jsx";
 import { getGuestFromUrl } from "./Guest.js";
 
 function App() {
   const guest = getGuestFromUrl()
+
+  useEffect(() => {
+    const revealItems = document.querySelectorAll('[data-reveal]')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.14, rootMargin: '0px 0px -16% 0px' },
+    )
+
+    revealItems.forEach((item) => observer.observe(item))
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <main className="invitation-page">
@@ -19,14 +42,14 @@ function App() {
         aria-hidden="true"
       />
 
-      <article className="invitation-card">
+      <article className="invitation-card reveal-item" data-reveal>
         <div className="invitation-title">
           <p className="eyebrow">Save &nbsp; The &nbsp;  Date</p>
         </div>
 
         <div className="portrait-frame">
           {/* <img src={couplePhoto} alt="Cô dâu và chú rể" /> */}
-          <img src={couplePhoto2} alt="Cô dâu và chú rể" />
+          <img src={couplePhoto2} alt="Cô dâu và chú rể" data-reveal="image" />
           {/* <div className="portrait-caption" aria-hidden="true">
             <span>In</span><span>timate</span>
             <small>WEDDING</small>
@@ -39,18 +62,23 @@ function App() {
         </div>
       </article>
 
-      <article className="family-introduction" aria-labelledby="story-heading">
-        <p className="story-heading" id="story-heading">
-          Vài năm sau khi gặp nhau, giờ đây chúng mình có một buổi
-          tiệc nhỏ để chia sẻ niềm vui của mối nhân duyên này với những người bạn thân thiết.
-        </p>
+      <article className="family-introduction reveal-item" data-reveal aria-labelledby="story-heading">
+        <div className="story-heading-wrap" data-reveal="diagonal">
+          <img className="story-flower story-flower-left" src={flower2} alt="" data-reveal="flower" />
+          <img className="story-flower story-flower-right" src={flower2} alt="" data-reveal="flower" />
+          <img className="story-flower story-flower-bottom" src={flower3} alt="" data-reveal="flower" />
+          <p className="story-heading" id="story-heading">
+            Vài năm sau khi gặp nhau, giờ đây chúng mình có một buổi
+            tiệc nhỏ để chia sẻ niềm vui của mối nhân duyên này với những người bạn thân thiết
+          </p>
+        </div>
 
         <div className="couple-introduction">
           <div className="bride-introduction">
-            <img className="person-photo bride-photo" src={bridePhoto} alt="Cô dâu Thu Hiền" />
+            <img className="person-photo bride-photo" src={bridePhoto} alt="Cô dâu Thu Hiền" data-reveal="image" />
             <div className="person-details bride-details">
               <h2 className="details-title" >Cô dâu:</h2>
-              <img className="person-sticker" src={brideSticker} alt="" />
+              <img className="person-sticker" src={brideSticker} alt="" data-reveal="image" />
               <p className="person-name">Thu Hiền</p>
             </div>
           </div>
@@ -59,24 +87,24 @@ function App() {
           <div className="groom-introduction">
             <div className="person-details groom-details">
               <h2 className="details-title">Chú rể:</h2>
-              <img className="person-sticker" src={groomSticker} alt="" />
+              <img className="person-sticker" src={groomSticker} alt="" data-reveal="image" />
               <p className="person-name">Việt Long</p>
             </div>
-            <img className="person-photo groom-photo" src={groomPhoto} alt="Chú rể Việt Long" />
+            <img className="person-photo groom-photo" src={groomPhoto} alt="Chú rể Việt Long" data-reveal="image" />
           </div>
         </div>
       </article>
 
-      <article className="ceremony-section" aria-labelledby="ceremony-heading">
+      <article className="ceremony-section reveal-item" data-reveal aria-labelledby="ceremony-heading">
         <div className="ceremony-visual">
           <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời:</h2>
           <p className="invitation-message">
             <strong className="guest-name">{guest.name}</strong> tới dự buổi tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
           </p>
         </div>
-        <p className="ceremony-date">Thời gian:<strong className="guest-name"> 14h - 17h Thứ 7 ngày 31/10/2026 </strong></p>
+        <p className="ceremony-date">Thời gian:<strong className="date-time"> 14h - 17h Thứ 7 ngày 31/10/2026 </strong></p>
 
-        <div className="calendar" aria-label="Lịch tháng 10 năm 2026">
+        <div className="calendar" data-reveal="diagonal" aria-label="Lịch tháng 10 năm 2026">
           <div className="calendar-header">
             <p className="calendar-month">Tháng 10</p>
             <p className="calendar-month">2026</p>
@@ -100,9 +128,9 @@ function App() {
             <span className="calendar-day calendar-muted">1</span>
           </div>
         </div>
-        <p className="ceremony-date">Địa điểm:<strong className="guest-name"> Oho Coffee & Camping BBQ Ecopark </strong></p>
+        <p className="ceremony-date">Địa điểm:<strong className="date-time"> Oho Coffee & Camping BBQ Ecopark </strong></p>
         <p className="ceremony-address">Đ. Thủy Nguyên, Khu đô thị Ecopark, Phụng Công, Hưng Yên, Vietnam </p>
-        <div className="map-embed">
+        <div className="map-embed" data-reveal="diagonal">
           <iframe
             src="https://www.google.com/maps?q=20.9473791,105.9344606&z=17&output=embed"
             title="Bản đồ địa điểm tổ chức tiệc cưới"

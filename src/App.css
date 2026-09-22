@@ -38,7 +38,41 @@
   box-sizing: border-box;
   background: rgba(255, 255, 253, .92);
   box-shadow: 0 18px 50px rgba(45, 42, 36, .18);
-  animation: card-arrival .9s ease both;
+}
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.22, 1, .36, 1);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal="image"] {
+  opacity: 0;
+  transform: translate(30px, 30px);
+  transition: opacity .85s ease, transform .85s cubic-bezier(.22, 1, .36, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="image"].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+[data-reveal="diagonal"] {
+  opacity: 0;
+  transform: translate(30px, 30px);
+  transition: opacity .85s ease, transform .85s cubic-bezier(.22, 1, .36, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="diagonal"].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .invitation-title {
@@ -99,7 +133,7 @@
 
 .names-block h1 {
   margin: 0;
-  color: #191817;
+  color: #124b39;
   font-family: "Great Vibes", cursive;
   font-size: clamp(32px, 6.4vw, 60px);
   line-height: 1.08;
@@ -118,9 +152,9 @@
 .names-block time {
   display: block;
   margin-top: 27px;
-  color: #2b2a29;
+  color: #124b39;
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(35px, 5.5vw, 61px);
+  font-size: clamp(28px, 5.5vw, 55px);
   /* font-weight: 700; */
   letter-spacing: .08em;
 }
@@ -131,30 +165,77 @@
   box-sizing: border-box;
   background: rgba(255, 255, 253, .94);
   box-shadow: 0 18px 50px rgba(45, 42, 36, .14);
-  animation: card-arrival .9s ease both;
 }
 
 .story-heading {
   max-width: 500px;
   margin: 0 auto 40px;
-  color: #929292;
-   font-family: "Be Vietnam Pro", sans-serif;
+  font-size: clamp(28px, 2vw, 28px);
+  font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 700;
-  font-size: 24px;
   line-height: 1.5;
   text-align: center;
 }
 
+.story-heading-wrap {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.story-heading-wrap .story-heading {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+[data-reveal="flower"] {
+  position: absolute;
+  z-index: 0;
+  width: clamp(48px, 11vw, 88px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease, transform 1.1s cubic-bezier(.22, 1, .36, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="flower"].is-visible {
+  opacity: .9;
+  transform: translate(0, 0) rotate(0);
+}
+
+.story-flower-left {
+  left: -18px;
+  top: 60%;
+  transform: translate(-60px, 30px) rotate(-22deg);
+}
+
+.story-flower-right {
+  right: -28px;
+  top: 35%;
+  transform: translate(38px, 28px) rotate(22deg);
+}
+
+.story-flower-bottom {
+  left: 60%;
+  bottom: -38px;
+  transform: translate(-50%, 42px) rotate(10deg);
+}
+
 .couple-introduction {
+  padding: 20px 0;
   display: grid;
   grid-template-columns: 1fr;
-  align-items: stretch;
+  align-items: stretch; 
+  background: #fbf7f2;
 }
 
 .bride-introduction {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
+  padding: 10px 0
 }
 
 .groom-introduction {
@@ -209,7 +290,7 @@
 
 .person-details h2 {
   margin: 0;
-  color: #3e3632;
+  color:#721215;
   /* font-family: 'Arial Narrow', Arial, sans-serif; */
   font-family: "Great Vibes", cursive;
   font-weight: 700;
@@ -234,7 +315,7 @@
 
 .person-name {
   margin: 0;
-  color: #604e47;
+  color: #721215;
   font-family: "Great Vibes", cursive;
   font-size: clamp(30px, 3.7vw, 45px);
   line-height: 1.15;
@@ -242,6 +323,7 @@
 
 .details-title {
   font-family: "Cormorant Garamond", serif;
+  color:#721215
 }
 
 .ceremony-section {
@@ -251,7 +333,6 @@
   background: rgba(255, 255, 253, .94);
   box-shadow: 0 18px 50px rgba(45, 42, 36, .14);
   text-align: center;
-  animation: card-arrival .9s ease both;
 }
 
 .ceremony-heading {
@@ -261,6 +342,7 @@
   font-size: clamp(44px, 7vw, 70px);
   font-weight: 400;
   line-height: 1.05;
+  margin-bottom: 18px;
 }
 
 .ceremony-date {
@@ -312,16 +394,22 @@
 
 .invitation-message {
   margin: 0;
-  color: #51403b;
+  font-size: clamp(28px, 2vw, 28px);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(24px, 4vw, 34px);
-  line-height: 1.35;
-  text-align: center;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .guest-name {
   color: #721215;
   font-weight: 700;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(40px, 4vw, 34px);
+}
+
+.date-time {
+  color: #721215;
+  font-weight: 400;
   font-family: Arial, sans-serif;
 }
 
@@ -454,6 +542,17 @@
   background: rgba(255, 255, 253, .94);
   box-shadow: 0 18px 50px rgba(45, 42, 36, .14);
   color: #51403b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item,
+  [data-reveal="image"],
+  [data-reveal="diagonal"],
+  [data-reveal="flower"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .rsvp h2 {
@@ -590,7 +689,11 @@
   .invitation-card { min-height: calc(100svh - 32px); padding-inline: 18px; }
   .names-block h1 { white-space: normal; }
   .family-introduction { padding-top: 40px; }
-  .story-heading { margin-bottom: 38px; font-size: 16px; }
+  .story-heading-wrap { padding-inline: 10px; }
+  .story-flower-left { left: -16px; }
+  .story-flower-right { right: -16px; }
+  .story-flower-bottom { bottom: -30px; }
+  .story-heading { margin-bottom: 38px; font-size: 20px; }
   .person-photo { height: auto; aspect-ratio: 3 / 4; }
   .person-details { min-height: 260px; }
   .ceremony-section { padding-top: 25px; }
