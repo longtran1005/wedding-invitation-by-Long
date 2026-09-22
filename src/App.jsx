@@ -1,5 +1,6 @@
 import './App.css'
 import couplePhoto from '../images/LVT02675re.jpg'
+import couplePhoto2 from '../images/LVT02483re.jpg'
 import bridePhoto from '../images/DSCF3662re.JPG'
 import groomPhoto from '../images/LVT02609cr.jpg'
 import brideSticker from '../images/sticker/bride-sticker.png'
@@ -24,11 +25,12 @@ function App() {
         </div>
 
         <div className="portrait-frame">
-          <img src={couplePhoto} alt="Cô dâu và chú rể" />
-          <div className="portrait-caption" aria-hidden="true">
+          {/* <img src={couplePhoto} alt="Cô dâu và chú rể" /> */}
+          <img src={couplePhoto2} alt="Cô dâu và chú rể" />
+          {/* <div className="portrait-caption" aria-hidden="true">
             <span>In</span><span>timate</span>
             <small>WEDDING</small>
-          </div>
+          </div> */}
         </div>
 
         <div className="names-block">
@@ -77,7 +79,7 @@ function App() {
         <div className="calendar" aria-label="Lịch tháng 10 năm 2026">
           <div className="calendar-header">
             <p className="calendar-month">Tháng 10</p>
-            <p className="calendar-year">Năm 2026</p>
+            <p className="calendar-month">2026</p>
           </div>
           <div className="calendar-grid">
             {['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((day) => (
