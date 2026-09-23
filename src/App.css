@@ -290,7 +290,8 @@
 
 .person-details h2 {
   margin: 0;
-  color:#721215;
+  /* color:#721215; */
+  color:#124b39;
   /* font-family: 'Arial Narrow', Arial, sans-serif; */
   font-family: "Great Vibes", cursive;
   font-weight: 700;
@@ -315,7 +316,8 @@
 
 .person-name {
   margin: 0;
-  color: #721215;
+  /* color: #721215; */
+  color:#124b39;
   font-family: "Great Vibes", cursive;
   font-size: clamp(30px, 3.7vw, 45px);
   line-height: 1.15;
@@ -323,7 +325,8 @@
 
 .details-title {
   font-family: "Cormorant Garamond", serif;
-  color:#721215
+  /* color:#721215 */
+  color:#124b39;
 }
 
 .ceremony-section {

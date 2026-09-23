@@ -79,7 +79,7 @@ function App() {
             <div className="person-details bride-details">
               <h2 className="details-title" >Cô dâu:</h2>
               <img className="person-sticker" src={brideSticker} alt="" data-reveal="image" />
-              <p className="person-name">Thu Hiền</p>
+              <p className="person-name" data-reveal="image">Thu Hiền</p>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ function App() {
             <div className="person-details groom-details">
               <h2 className="details-title">Chú rể:</h2>
               <img className="person-sticker" src={groomSticker} alt="" data-reveal="image" />
-              <p className="person-name">Việt Long</p>
+              <p className="person-name" data-reveal="image">Việt Long</p>
             </div>
             <img className="person-photo groom-photo" src={groomPhoto} alt="Chú rể Việt Long" data-reveal="image" />
           </div>
