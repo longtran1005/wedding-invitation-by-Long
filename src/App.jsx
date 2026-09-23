@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import './App.css'
 import couplePhoto from '../images/LVT02675re.jpg'
 import couplePhoto2 from '../images/LVT02483re.jpg'
-import bridePhoto from '../images/DSCF3662re.JPG'
+import bridePhoto from '../images/DSCF3662re.PNG'
 import groomPhoto from '../images/LVT02609cr.jpg'
 import brideSticker from '../images/sticker/bride-sticker.png'
 import groomSticker from '../images/sticker/groom-sticker.png'
@@ -68,8 +68,9 @@ function App() {
           <img className="story-flower story-flower-right" src={flower2} alt="" data-reveal="flower" />
           <img className="story-flower story-flower-bottom" src={flower3} alt="" data-reveal="flower" />
           <p className="story-heading" id="story-heading">
-            Vài năm sau khi gặp nhau, giờ đây chúng mình có một buổi
-            tiệc nhỏ để chia sẻ niềm vui của mối nhân duyên này với những người bạn thân thiết
+            Chúng mình đã gặp nhau từ vài năm trước, 
+             buổi tiệc nhỏ này là để đánh dấu chặng đường ấy,
+             cũng như chia sẻ niềm vui "kết đôi" này cùng những người bạn thân thiết.
           </p>
         </div>
 
@@ -98,8 +99,9 @@ function App() {
       <article className="ceremony-section reveal-item" data-reveal aria-labelledby="ceremony-heading">
         <div className="ceremony-visual">
           <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời:</h2>
-          <p className="invitation-message">
-            <strong className="guest-name">{guest.name}</strong> tới dự buổi tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
+          <strong className="guest-name">{guest.name}</strong>
+          <p className="story-heading">
+             tới dự buổi tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
           </p>
         </div>
         <p className="ceremony-date">Thời gian:<strong className="date-time"> 14h - 17h Thứ 7 ngày 31/10/2026 </strong></p>

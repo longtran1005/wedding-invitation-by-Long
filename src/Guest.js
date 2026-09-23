@@ -42,7 +42,7 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
   {
     id: "toan-du-bi",
     name: "Toản",
-    formOfAddress: "hai chúng mình",
+    formOfAddress: "hai anh chị",
     wish: `😒 Cố mà enjoy bữa tiệc này nhé (⁠•⁠‿⁠•⁠⁠)\n\nHello Toản! Cứ mặc kệ cô dâu mà tận hưởng bữa tiệc cùng người thương nhé (◕‿◕)♡`,
   },
   {
@@ -54,7 +54,7 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
   {
     id: "huy",
     name: "Huy",
-    formOfAddress: "2 anh chị",
+    formOfAddress: "2 chúng mình",
     wish: `Thật vinh dự khi có celeb bận rộn ghé thăm bữa tiệc nho nhỏ này. Chơi thật vui và nhớ cười mồi thật nhiều nhó (kiểu cười có sức lan tỏa khiến người ta không thể không cười theo í)\n\nWelcom Huy đến với tiệc trà (⌐▨_▨)\n\nChúc em có nhiều trải nghiệm vui vẻ ngày hôm nay :)`,
   },
   {
@@ -72,7 +72,7 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
   {
     id: "lan",
     name: "Lan",
-    formOfAddress: "2 anh chị",
+    formOfAddress: "hai chúng mình",
     wish: `Hy vọng lần đầu trải nghiệm tiệc wedding theo concept trà chiều không làm bạn Lan thất vọng. Cảm ơn vì bạn đã luôn luôn nhiệt tình với tớ trong mọi chuyện, mọi vấn đề. Bật mí là khi tổ chức photobooth, tớ đã nghĩ đến bạn nhiều nhất đó, cho nên nhớ phải chụp cháy máy đi nhó. Mong chờ ảnh feedback của Lan (⁠ ⁠˘⁠ ⁠³⁠˘⁠)⁠♥\n\nWelcome Lan đến với tiệc trà (｡•̀ᴗ-)✧ Chúc em party vui vẻ và mang về nhà được nhiều tấm ảnh đẹp 📸`,
   },
   {
@@ -102,13 +102,13 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
   {
     id: "hien-trang",
     name: "Hiền Trang",
-    formOfAddress: "hai chúng em",
+    formOfAddress: "hai chúng tớ",
     wish: `Rất vui vì Hiền Trang đã ghé qua bữa tiệc indie đầy tâm huyết của chúng tớ.\n\nChúc 5 giác quan của cậu hôm nay đều được trải nghiệm dịch vụ 4 sao trở lên nhé! ✨\n\nChào mừng chị đến bữa tiệc nho nhỏ của chúng em. Hi vọng chị tận hưởng bữa tiệc này. Em mong chờ những bản nhạc mà chị sẽ chọn lắm đó (⁠ ⁠╹⁠▽⁠╹⁠ ⁠)`,
   },
   {
     id: "thu",
     name: "Thư",
-    formOfAddress: "hai chúng em",
+    formOfAddress: "hai chúng tớ",
     wish: `Chào mừng bạn Thư đến với tiệc trà thân mật của chúng tớ ♡ Bữa tiệc này không chỉ có Hiền mà còn có nhiều mảnh ghép khác nhau trong cuộc sống hiện tại và cả ngày trước của tớ. Thế nên là rất happy khi bạn đã góp mặt. Hề hề.\n\nEm đã được nghe anh Long kể nhiều về chị, nhưng chưa có dịp gặp mặt. Cảm ơn chị đã gợi ý địa điểm này cho chúng em. Chúc chị vui vẻ tận hưởng bữa tiệc này nhé ^^`,
   },
   {
@@ -120,7 +120,7 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
   {
     id: "bong",
     name: "Bống",
-    formOfAddress: "hai chúng em",
+    formOfAddress: "hai bọn Mực",
     wish: `Chào mừng Bống đến với chiếc intimate wedding của bọn Mực\n\nEnjoy trà bánh và các tiết mục mà cô dâu chú rể đã dày công chuẩn bị nhé ^_^\n\nEm nghe anh Long kể chị thích những nơi có cây cối xanh mát. Hy vọng chị cũng sẽ thích bữa tiệc này của chúng em. Mong là em sẽ có cơ hội trò chuyện nhiều hơn với chị.`,
   },
   {
