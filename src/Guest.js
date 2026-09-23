@@ -94,7 +94,7 @@ Chúc chị nhiều trải nghiệm mới lạ và thú vị trong buổi tiệc
     wish: `Mừng Thảo đến với bữa tiệc của bạn. Đã tới rồi thì đừng áp lực gì nữa nhé. Tiệc cây nhà lá vườn thôi, thích làm gì thì cứ làm. Có một vài người Thảo quen đó, hãy thử nói chuyện lại với họ nhé.\n\nChào mừng Thảo đến với tiệc trà. Thử trải nghiệm tiệc cưới ko truyền thống này nhé :D Chúc vui!`,
   },
   {
-    id: "nguyetanh",
+    id: "nguyet-anh",
     name: "Nguyệt Anh",
     formOfAddress: "hai chúng mình",
     wish: `Chào mừng Nguyệt Anh đến với tiệc trà của chúng tôi (｡♥‿♥｡) Hải trình do em khởi xướng đã được hơn ba năm và đi đến cột mốc mới. Hãy tận hưởng lễ kỷ niệm này cùng chúng tôi nhé ;)\n\nThuyền trưởng đã lái thuyền cập bến rồi đó. Welcome mày đến với bữa tiệc bay bay của bọn tao. Mong là mày có trải nghiệm vui vẻ và bớt khẩu nghiệp, phán xét, nhưng mà cũng không cần tỏ ra nice quá đâu, quẩy nát bữa tiệc đê~~~ \\⁠(⁠๑⁠╹⁠◡⁠╹⁠๑⁠)⁠ﾉ⁠♬`,

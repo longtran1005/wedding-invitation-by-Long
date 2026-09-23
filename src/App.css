@@ -82,7 +82,7 @@
 
 .eyebrow {
   margin: 0 0 clamp(24px, 4vw, 38px);
-  color: #721215;
+  color: #124b39;
   text-align: center;
   /* font-family: 'Brittany Signature', 'Segoe Script', 'Snell Roundhand', cursive; */
   font-family: "Great Vibes", cursive;
@@ -228,7 +228,7 @@
   display: grid;
   grid-template-columns: 1fr;
   align-items: stretch; 
-  background: #fbf7f2;
+  background: rgba(255, 255, 253, .92);
 }
 
 .bride-introduction {
@@ -256,9 +256,10 @@
   display: block;
   width: 100%;
   height: 398px;
-  border: 1px solid #745d52;
+  /* border: 1px solid #745d52; */
   box-sizing: border-box;
   object-fit: cover;
+  box-shadow: 0 4px 18px rgba(60, 50, 40, 0.06);
 }
 
 .groom-photo {
@@ -290,7 +291,7 @@
 
 .person-details h2 {
   margin: 0;
-  /* color:#721215; */
+  /* color:#124b39; */
   color:#124b39;
   /* font-family: 'Arial Narrow', Arial, sans-serif; */
   font-family: "Great Vibes", cursive;
@@ -316,7 +317,7 @@
 
 .person-name {
   margin: 0;
-  /* color: #721215; */
+  /* color: #124b39; */
   color:#124b39;
   font-family: "Great Vibes", cursive;
   font-size: clamp(30px, 3.7vw, 45px);
@@ -325,7 +326,7 @@
 
 .details-title {
   font-family: "Cormorant Garamond", serif;
-  /* color:#721215 */
+  /* color:#124b39 */
   color:#124b39;
 }
 
@@ -340,7 +341,7 @@
 
 .ceremony-heading {
   margin: 0;
-  color: #721215;
+  color: #124b39;
   font-family: "Great Vibes", cursive;
   font-size: clamp(44px, 7vw, 70px);
   font-weight: 400;
@@ -368,7 +369,7 @@
   height: clamp(260px, 42vw, 380px);
   margin-top: 24px;
   overflow: hidden;
-  border: 1px solid rgba(114, 18, 21, .16);
+  border: 1px solid rgba(18, 75, 57, .16);
   border-radius: 14px;
   background: #eee8e2;
   box-shadow: 0 10px 24px rgba(93, 35, 35, .1);
@@ -392,7 +393,7 @@
   align-items: center;
   justify-content: center;
   background: #fbf7f2;
-  border: 1px solid rgba(114, 18, 21, .16);
+  border: 1px solid rgba(18, 75, 57, .16);
 }
 
 .invitation-message {
@@ -404,14 +405,14 @@
 }
 
 .guest-name {
-  color: #721215;
+  color: #124b39;
   font-weight: 700;
   font-family: "Great Vibes", cursive;
   font-size: clamp(40px, 4vw, 34px);
 }
 
 .date-time {
-  color: #721215;
+  color: #124b39;
   font-weight: 400;
   font-family: Arial, sans-serif;
 }
@@ -433,7 +434,7 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
-  background: #721215;
+  background: #124b39;
   color: #fff;
 }
 
@@ -526,7 +527,7 @@
   margin-top: 16px;
   padding: 11px 22px;
   border-radius: 999px;
-  background: #721215;
+  background: #124b39;
   color: #fff;
   text-decoration: none;
   font-size: 14px;
@@ -560,7 +561,7 @@
 
 .rsvp h2 {
   margin: 0 0 28px;
-  color: #721215;
+  color: #124b39;
   font-family: "Great Vibes", cursive;
   font-size: clamp(40px, 7vw, 60px);
   font-weight: 400;
@@ -595,9 +596,10 @@
 }
 
 .rsvp input[type="text"]:disabled {
-  background: #f2eeeb;
-  color: #806e66;
+  background: #F3F8F5; 
+  color: #124b39;
   opacity: 1;
+  font-weight: 700;
 }
 
 .rsvp fieldset {
@@ -628,9 +630,9 @@
 }
 
 .rsvp .attendance-option:has(input:checked) {
-  border-color: #721215;
-  background: #fff8f7;
-  color: #721215;
+  border-color: #124b39;
+  background: #E8F2ED;
+  color: #124b39;
   font-weight: 700;
 }
 
@@ -646,7 +648,7 @@
 }
 
 .rsvp .attendance-option:focus-within {
-  outline: 2px solid rgba(114, 18, 21, .25);
+  outline: 2px solid rgba(18, 75, 57, .25);
   outline-offset: 2px;
 }
 
@@ -669,7 +671,7 @@
   padding: 13px 20px;
   border: 0;
   border-radius: 10px;
-  background: #721215;
+  background: #124b39;
   color: #fff;
   cursor: pointer;
   font: 600 17px "Cormorant Garamond", Georgia, serif;
