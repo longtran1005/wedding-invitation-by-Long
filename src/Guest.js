@@ -97,7 +97,7 @@ export const guests = [
     partyOverview: "Tổ chức tiệc cưới thân mật dù mệt nhưng chúng tớ tin nó sẽ đem lại niềm vui cho mọi người. Buổi tiệc này là để chúng tớ để chia sẻ niềm vui \"kết đôi\" với những người bạn thân thiết nhất",
   },
   {
-    id: "duong-thu",
+    id: "thi-thu",
     name: "bạn Thư",
     formOfAddress: "chúng tớ",
     partyOverview: "Tuy không thích đám cưới truyền thống nhưng chúng tớ lại thích tiệc cưới thân mật vui vẻ. Buổi tiệc này là để chúng tớ chia sẻ niềm vui \"kết đôi\" với những người bạn thân thiết nhất",
