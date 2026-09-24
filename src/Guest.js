@@ -88,19 +88,19 @@ export const guests = [
     id: "nguyet-anh",
     name: "Nguyệt Anh",
     formOfAddress: "chúng mình",
-    partyOverview: "Đã hơn 3 năm kể từ lần đầu chúng tôi gặp nhau! Buổi tiệc nhỏ này là để đánh dấu chặng đường ấy, và cũng để chia sẻ niềm vui \"kết đôi\" này cùng những người bạn thân thiết nhất",
+    partyOverview: "Đã hơn 3 năm kể từ lần đầu chúng tôi gặp nhau! Buổi tiệc nhỏ này là để đánh dấu chặng đường ấy, và cũng để chia sẻ niềm vui \"kết đôi\" với những người bạn thân thiết nhất",
   },
   {
     id: "hien-trang",
     name: "Hiền Trang",
     formOfAddress: "chúng tớ",
-    partyOverview: "Tổ chức tiệc cưới thân mật dù mệt nhưng chúng tớ tin nó sẽ đem lại niềm vui cho mọi người. Buổi tiệc này là để chúng tớ để chia sẻ niềm vui \"kết đôi\" cùng những người bạn thân thiết nhất",
+    partyOverview: "Tổ chức tiệc cưới thân mật dù mệt nhưng chúng tớ tin nó sẽ đem lại niềm vui cho mọi người. Buổi tiệc này là để chúng tớ để chia sẻ niềm vui \"kết đôi\" với những người bạn thân thiết nhất",
   },
   {
-    id: "thi-thu",
+    id: "duong-thu",
     name: "bạn Thư",
     formOfAddress: "chúng tớ",
-    partyOverview: "Tuy không thích đám cưới truyền thống nhưng chúng tớ lại thích tiệc cưới thân mật vui vẻ. Buổi tiệc này là để chúng tớ chia sẻ niềm vui \"kết đôi\" cùng những người bạn thân thiết nhất",
+    partyOverview: "Tuy không thích đám cưới truyền thống nhưng chúng tớ lại thích tiệc cưới thân mật vui vẻ. Buổi tiệc này là để chúng tớ chia sẻ niềm vui \"kết đôi\" với những người bạn thân thiết nhất",
   },
   {
     id: "mai",
