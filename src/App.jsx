@@ -70,7 +70,7 @@ function App() {
           <p className="story-heading" id="story-heading">
             Chúng mình đã gặp nhau từ vài năm trước, 
              buổi tiệc nhỏ này là để đánh dấu chặng đường ấy,
-             cũng như chia sẻ niềm vui "kết đôi" này cùng những người bạn thân thiết.
+             cũng như chia sẻ niềm vui "kết đôi" này cùng những người bạn thân thiết
           </p>
         </div>
 
@@ -78,7 +78,7 @@ function App() {
           <div className="bride-introduction">
             <img className="person-photo bride-photo" src={bridePhoto} alt="Cô dâu Thu Hiền" data-reveal="image" />
             <div className="person-details bride-details">
-              <h2 className="details-title" >Cô dâu:</h2>
+              <h2 className="details-title" >Cô dâu</h2>
               <img className="person-sticker" src={brideSticker} alt="" data-reveal="image" />
               <p className="person-name" data-reveal="image">Thu Hiền</p>
             </div>
@@ -87,7 +87,7 @@ function App() {
 
           <div className="groom-introduction">
             <div className="person-details groom-details">
-              <h2 className="details-title">Chú rể:</h2>
+              <h2 className="details-title">Chú rể</h2>
               <img className="person-sticker" src={groomSticker} alt="" data-reveal="image" />
               <p className="person-name" data-reveal="image">Việt Long</p>
             </div>
@@ -98,10 +98,10 @@ function App() {
 
       <article className="ceremony-section reveal-item" data-reveal aria-labelledby="ceremony-heading">
         <div className="ceremony-visual">
-          <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời:</h2>
+          <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời</h2>
           <strong className="guest-name">{guest.name}</strong>
           <p className="story-heading">
-             tới dự buổi tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
+             tới dự tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
           </p>
         </div>
         <p className="ceremony-date">Thời gian:<strong className="date-time"> 14h - 17h Thứ 7 ngày 31/10/2026 </strong></p>
