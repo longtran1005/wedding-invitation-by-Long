@@ -6,6 +6,7 @@ import bridePhoto from '../images/DSCF3662re.PNG'
 import groomPhoto from '../images/LVT02609cr.jpg'
 import brideSticker from '../images/sticker/bride-sticker.png'
 import groomSticker from '../images/sticker/groom-sticker.png'
+import flower1 from '../images/flower/flower1.png'
 import flower2 from '../images/flower/flower2.png'
 import flower3 from '../images/flower/flower3.png'
 import Reserve from "./Reserve.jsx";
@@ -59,7 +60,7 @@ function App() {
       <article className="family-introduction reveal-item" data-reveal aria-labelledby="story-heading">
         <div className="story-heading-wrap" data-reveal="diagonal">
           <img className="story-flower story-flower-left" src={flower2} alt="" data-reveal="flower" />
-          <img className="story-flower story-flower-right" src={flower2} alt="" data-reveal="flower" />
+          <img className="story-flower story-flower-right" src={flower1} alt="" data-reveal="flower" />
           <img className="story-flower story-flower-bottom" src={flower3} alt="" data-reveal="flower" />
           <p className="story-heading" id="story-heading">
             {guest.partyOverview || `Chúng mình đã gặp nhau từ hơn 3 năm trước, buổi tiệc nhỏ này là để đánh dấu chặng đường ấy, cũng như chia sẻ niềm vui "kết đôi" này cùng những người bạn thân thiết`}
