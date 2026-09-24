@@ -6,7 +6,6 @@ import bridePhoto from '../images/DSCF3662re.PNG'
 import groomPhoto from '../images/LVT02609cr.jpg'
 import brideSticker from '../images/sticker/bride-sticker.png'
 import groomSticker from '../images/sticker/groom-sticker.png'
-import flower1 from '../images/flower/flower1.png'
 import flower2 from '../images/flower/flower2.png'
 import flower3 from '../images/flower/flower3.png'
 import Reserve from "./Reserve.jsx";
@@ -48,12 +47,7 @@ function App() {
         </div>
 
         <div className="portrait-frame">
-          {/* <img src={couplePhoto} alt="Cô dâu và chú rể" /> */}
           <img src={couplePhoto2} alt="Cô dâu và chú rể" data-reveal="image" />
-          {/* <div className="portrait-caption" aria-hidden="true">
-            <span>In</span><span>timate</span>
-            <small>WEDDING</small>
-          </div> */}
         </div>
 
         <div className="names-block">
@@ -145,13 +139,16 @@ function App() {
           rel="noopener noreferrer"
           className="map-direction-btn"
         >
-          📍 &nbsp;  Xem đường đi trên Google Maps
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg> &nbsp;  Xem đường đi trên Google Maps
         </a>
       </article>
 
       <article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
         <div className="dress-code-copy">
-          <p className="dress-code-kicker">Note nhỏ cho khách mời</p>
+          {/* <p className="dress-code-kicker">Note nhỏ cho khách mời</p> */}
           <h2 className="dress-code-heading" id="dress-code-heading">Dress code</h2>
           <p className="dress-code-message">
             Gợi ý màu sắc trang phục trong trường hợp bạn ko biết chọn màu gì 
