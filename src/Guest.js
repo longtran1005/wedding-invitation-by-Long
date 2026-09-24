@@ -130,7 +130,7 @@ export const guests = [
     id: "phuc",
     name: "Phúc",
     formOfAddress: "anh chị",
-    partyOverview: "Tiệc cưới thân mật được thiết kế tối giản phần nghi lễ, tập trung và kết nối và trải nghiệm. Hãy đến và cùng chia sẻ niềm vui \"kết đôi\" với cô dâu chú rể nhé.",
+    partyOverview: "Tiệc cưới thân mật được thiết kế tối giản phần nghi lễ, tập trung vào kết nối và trải nghiệm. Hãy đến và cùng chia sẻ niềm vui \"kết đôi\" với cô dâu chú rể nhé.",
   },
   {
     id: "sua",
