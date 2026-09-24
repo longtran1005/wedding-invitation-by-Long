@@ -25,6 +25,11 @@
   animation: envelope-screen-in .5s ease both;
 }
 
+.envelope-screen.is-closing {
+  animation: envelope-screen-close .7s cubic-bezier(.22, 1, .36, 1) forwards;
+  pointer-events: none;
+}
+
 .envelope-card {
   position: relative;
   width: min(484px, 100%);
@@ -164,6 +169,17 @@
 @keyframes envelope-screen-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes envelope-screen-close {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.04);
+  }
 }
 
 .music-toggle {
@@ -1108,7 +1124,7 @@
   border: 0;
   color: #124b39;
   background: transparent;
-  font: 400 clamp(19px, 4vw, 27px) Georgia, 'Times New Roman', serif;
+  font: 400 clamp(21px, 4vw, 27px) Georgia, 'Times New Roman', serif;
   cursor: pointer;
   isolation: isolate;
   animation: smoke-button-float 2.3s ease-in-out infinite;

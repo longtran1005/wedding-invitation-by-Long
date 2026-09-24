@@ -18,11 +18,17 @@ function App() {
   const audioRef = useRef(null)
   const fireworkCanvasRef = useRef(null)
   const [isInvitationOpen, setIsInvitationOpen] = useState(false)
+  const [isInvitationOpening, setIsInvitationOpening] = useState(false)
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
 
   const openInvitation = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-    setIsInvitationOpen(true)
+    setIsInvitationOpening(true)
+
+    window.setTimeout(() => {
+      setIsInvitationOpen(true)
+      setIsInvitationOpening(false)
+    }, 700)
 
     audioRef.current?.play().then(() => setIsMusicPlaying(true)).catch(() => {
       setIsMusicPlaying(false)
@@ -43,6 +49,8 @@ function App() {
   }
 
   useEffect(() => {
+    if (!isInvitationOpen) return undefined
+
     const audio = audioRef.current
     if (!audio) return undefined
 
@@ -73,7 +81,7 @@ function App() {
       audio.removeEventListener('error', stopMusic)
       observer.disconnect()
     }
-  }, [])
+  }, [isInvitationOpen])
 
   useEffect(() => {
     const canvas = fireworkCanvasRef.current
@@ -171,7 +179,10 @@ function App() {
   return (
     <main className="invitation-page">
       {!isInvitationOpen && (
-        <section className="envelope-screen" aria-label="Thiệp mời cưới">
+        <section
+          className={`envelope-screen${isInvitationOpening ? ' is-closing' : ''}`}
+          aria-label="Thiệp mời cưới"
+        >
           <div className="envelope-card">
             <img className="envelope-flower envelope-flower-top" src={flower1} alt="" />
             <img className="envelope-flower envelope-flower-bottom" src={flower3} alt="" />
