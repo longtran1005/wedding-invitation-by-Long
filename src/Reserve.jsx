@@ -161,7 +161,7 @@ function Reserve({ guest: guestProp }) {
 				/>
 
 				<fieldset>
-					<legend>Bạn có tới tham dự không?</legend>
+					<legend>Bạn sẽ tới tham dự chứ?</legend>
 
 					<label className="attendance-option">
 						<input
