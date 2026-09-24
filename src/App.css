@@ -545,6 +545,113 @@
   transform: translateY(-1px);
 }
 
+.dress-code-section {
+  width: min(694px, 100%);
+  box-sizing: border-box;
+  background: #f4eee7;
+  box-shadow: 0 18px 50px rgba(45, 42, 36, .14);
+  overflow: hidden;
+}
+
+.dress-code-copy {
+  display: flex;
+  min-height: 350px;
+  padding: 46px 30px 48px;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dress-code-kicker {
+  margin: 0 0 8px;
+  color: #8a6b5b;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.dress-code-heading {
+  margin: 0;
+  color: #124b39;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(44px, 6vw, 62px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.dress-code-message {
+  max-width: 250px;
+  margin: 22px 0 24px;
+  color: #51403b;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.dress-code-palette {
+  display: grid;
+  width: min(100%, 530px);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 12px;
+  justify-items: center;
+}
+
+.dress-code-color {
+  display: flex;
+  min-width: 92px;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.dress-code-swatch {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, .72);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(45, 42, 36, .16);
+}
+
+.beige { background: #E4D4BD; }
+.sand { background: #C9AA7F; }
+.cream-brown { background: #A9846B; }
+.chocolate { background: #542E1B; }
+.red-brown { background: #903F22; }
+.caramel { background: #B96A43; }
+.olive { background: #5A5E45; }
+.sage { background: #7E7C63; }
+
+.dress-code-color-name {
+  max-width: 116px;
+  color: #51403b;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.dress-code-color-name small {
+  display: block;
+  margin-top: 2px;
+  color: #8a6b5b;
+  font-size: 9px;
+  letter-spacing: .03em;
+}
+
+.dress-code-label {
+  max-width: 250px;
+  margin: 15px 0 0;
+  color: #8a6b5b;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: .04em;
+  line-height: 1.5;
+}
+
 .rsvp {
   width: min(694px, 100%);
   box-sizing: border-box;
@@ -713,4 +820,6 @@
   .calendar-header { padding-inline: 18px; }
   .calendar-grid { padding-inline: 8px; }
   .calendar-day { min-height: 48px; }
+  .dress-code-copy { min-height: 320px; padding: 38px 24px; }
+  .dress-code-palette { grid-template-columns: repeat(2, 1fr); gap: 16px 8px; }
 }

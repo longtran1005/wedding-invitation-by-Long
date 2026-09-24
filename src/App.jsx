@@ -151,6 +151,50 @@ function App() {
         </a>
       </article>
 
+      <article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
+        <div className="dress-code-copy">
+          <p className="dress-code-kicker">Note nhỏ cho khách mời</p>
+          <h2 className="dress-code-heading" id="dress-code-heading">Dress code</h2>
+          <p className="dress-code-message">
+            Nếu có thể hãy cùng nhau chọn những gam màu này để bữa tiệc thêm hài hòa và thật đẹp nhé.
+          </p>
+          <div className="dress-code-palette" aria-label="Các màu decor">
+            <span className="dress-code-color">
+              <span className="dress-code-swatch beige" />
+              <span className="dress-code-color-name">Be<small>#E4D4BD</small></span>
+            </span>
+            <span className="dress-code-color">
+              <span className="dress-code-swatch sand" />
+              <span className="dress-code-color-name">Cát<small>#C9AA7F</small></span>
+            </span>
+            <span className="dress-code-color">
+              <span className="dress-code-swatch cream-brown" />
+              <span className="dress-code-color-name">Nâu kem<small>#A9846B</small></span>
+            </span>
+            <span className="dress-code-color">
+              <span className="dress-code-swatch chocolate" />
+              <span className="dress-code-color-name">Nâu chocolate đậm<small>#542E1B</small></span>
+            </span>
+            <span className="dress-code-color">
+              <span className="dress-code-swatch red-brown" />
+              <span className="dress-code-color-name">Nâu đỏ / Terracotta<small>#903F22</small></span>
+            </span>
+            <span className="dress-code-color">
+              <span className="dress-code-swatch caramel" />
+              <span className="dress-code-color-name">Cam đất / Caramel<small>#B96A43</small></span>
+            </span>
+            <span className="dress-code-color">
+              <span className="dress-code-swatch olive" />
+              <span className="dress-code-color-name">Xanh olive đậm<small>#5A5E45</small></span>
+            </span>
+            <span className="dress-code-color">
+              <span className="dress-code-swatch sage" />
+              <span className="dress-code-color-name">Xanh sage / olive nhạt<small>#7E7C63</small></span>
+            </span>
+          </div>
+        </div>
+      </article>
+
       <Reserve guest={guest} />
     </main>
   )
