@@ -252,7 +252,8 @@ function App() {
           <img className="story-flower story-flower-right" src={flower1} alt="" data-reveal="flower" />
           <img className="story-flower story-flower-bottom" src={flower3} alt="" data-reveal="flower" />
           <p className="story-heading" id="story-heading">
-            {guest.partyOverview || `Chúng mình đã gặp nhau từ hơn 3 năm trước, buổi tiệc nhỏ này là để đánh dấu chặng đường ấy, cũng như chia sẻ niềm vui "kết đôi" này cùng những người bạn thân thiết`}
+            {guest.partyOverview || `Hơn 3 năm trước chúng mình gặp nhau, rồi cứ thế đi cùng nhau đến hôm nay. 
+            Một buổi tiệc nhỏ, vài người bạn thân. Hãy cùng tận hưởng buổi tiệc "kết đôi" của chúng mình nhé!`}
           </p>
         </div>
 
