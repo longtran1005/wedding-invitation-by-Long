@@ -68,9 +68,7 @@ function App() {
           <img className="story-flower story-flower-right" src={flower2} alt="" data-reveal="flower" />
           <img className="story-flower story-flower-bottom" src={flower3} alt="" data-reveal="flower" />
           <p className="story-heading" id="story-heading">
-            Chúng mình đã gặp nhau từ vài năm trước, 
-             buổi tiệc nhỏ này là để đánh dấu chặng đường ấy,
-             cũng như chia sẻ niềm vui "kết đôi" này cùng những người bạn thân thiết
+            {guest.partyOverview || `Chúng mình đã gặp nhau từ hơn 3 năm trước, buổi tiệc nhỏ này là để đánh dấu chặng đường ấy, cũng như chia sẻ niềm vui "kết đôi" này cùng những người bạn thân thiết`}
           </p>
         </div>
 
@@ -156,7 +154,7 @@ function App() {
           <p className="dress-code-kicker">Note nhỏ cho khách mời</p>
           <h2 className="dress-code-heading" id="dress-code-heading">Dress code</h2>
           <p className="dress-code-message">
-            Nếu có thể hãy cùng nhau chọn những gam màu này để bữa tiệc thêm hài hòa và thật đẹp nhé.
+            Gợi ý màu sắc trang phục trong trường hợp bạn ko biết chọn màu gì 
           </p>
           <div className="dress-code-palette" aria-label="Các màu decor">
             <span className="dress-code-color">

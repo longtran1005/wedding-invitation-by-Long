@@ -565,7 +565,7 @@
 }
 
 .dress-code-kicker {
-  margin: 0 0 8px;
+  margin: 0 0 18px;
   color: #8a6b5b;
   font-family: Arial, sans-serif;
   font-size: 10px;
@@ -584,7 +584,7 @@
 
 .dress-code-message {
   max-width: 250px;
-  margin: 22px 0 24px;
+  margin: 18px 0 24px;
   color: #51403b;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 21px;
