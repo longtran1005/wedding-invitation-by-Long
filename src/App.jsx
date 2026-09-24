@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import couplePhoto from '../images/LVT02675re.jpg'
 import couplePhoto2 from '../images/LVT02483re.jpg'
@@ -9,13 +9,50 @@ import groomSticker from '../images/sticker/groom-sticker.png'
 import flower1 from '../images/flower/flower1.png'
 import flower2 from '../images/flower/flower2.png'
 import flower3 from '../images/flower/flower3.png'
+
 import Reserve from "./Reserve.jsx";
 import { getGuestFromUrl } from "./Guest.js";
 
 function App() {
   const guest = getGuestFromUrl()
+  const audioRef = useRef(null)
+  const fireworkCanvasRef = useRef(null)
+  const [isInvitationOpen, setIsInvitationOpen] = useState(false)
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false)
+
+  const openInvitation = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    setIsInvitationOpen(true)
+
+    audioRef.current?.play().then(() => setIsMusicPlaying(true)).catch(() => {
+      setIsMusicPlaying(false)
+    })
+  }
+
+  const toggleMusic = () => {
+    if (!audioRef.current) return
+
+    if (audioRef.current.paused) {
+      audioRef.current.play().then(() => setIsMusicPlaying(true)).catch(() => {
+        setIsMusicPlaying(false)
+      })
+    } else {
+      audioRef.current.pause()
+      setIsMusicPlaying(false)
+    }
+  }
 
   useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return undefined
+
+    audio.volume = 0.85
+
+    const stopMusic = () => setIsMusicPlaying(false)
+
+    audio.addEventListener('ended', stopMusic)
+    audio.addEventListener('error', stopMusic)
+
     const revealItems = document.querySelectorAll('[data-reveal]')
     const observer = new IntersectionObserver(
       (entries) => {
@@ -31,11 +68,151 @@ function App() {
 
     revealItems.forEach((item) => observer.observe(item))
 
-    return () => observer.disconnect()
+    return () => {
+      audio.removeEventListener('ended', stopMusic)
+      audio.removeEventListener('error', stopMusic)
+      observer.disconnect()
+    }
+  }, [])
+
+  useEffect(() => {
+    const canvas = fireworkCanvasRef.current
+    const button = canvas?.parentElement
+    if (!canvas || !button) return undefined
+
+    const context = canvas.getContext('2d')
+    const particles = []
+    const colors = ['#124b39', '#b96a43', '#903f22']
+    let width = 0
+    let height = 0
+    let animationFrame
+    let lastSpawn = 0
+    let sweepPosition = 0
+
+    const resizeCanvas = () => {
+      const bounds = button.getBoundingClientRect()
+      const pixelRatio = window.devicePixelRatio || 1
+      width = bounds.width
+      height = bounds.height
+      canvas.width = width * pixelRatio
+      canvas.height = height * pixelRatio
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
+    }
+
+    const createBurst = (x, y) => {
+      const color = colors[Math.floor(Math.random() * colors.length)]
+      const rayCount = 24
+
+      for (let index = 0; index < rayCount; index += 1) {
+        const angle = (Math.PI * 2 * index) / rayCount + (Math.random() - .5) * .16
+        const speed = 28 + Math.random() * 30
+        const life = .72 + Math.random() * .3
+        particles.push({
+          x,
+          y,
+          previousX: x,
+          previousY: y,
+          velocityX: Math.cos(angle) * speed,
+          velocityY: Math.sin(angle) * speed,
+          life,
+          maxLife: life,
+          color,
+          size: 1 + Math.random() * 1.2,
+        })
+      }
+    }
+
+    const animateFireworks = (time) => {
+      context.globalCompositeOperation = 'destination-out'
+      context.fillStyle = 'rgba(255, 255, 255, .16)'
+      context.fillRect(0, 0, width, height)
+      context.globalCompositeOperation = 'screen'
+
+      if (time - lastSpawn > 430) {
+        createBurst(width * (.08 + sweepPosition * .84), height * (.45 + (Math.random() - .5) * .12))
+        sweepPosition = (sweepPosition + 1 / 6) % 1
+        lastSpawn = time
+      }
+
+      particles.forEach((particle, index) => {
+        particle.previousX = particle.x
+        particle.previousY = particle.y
+        particle.velocityY += 26 / 60
+        particle.x += particle.velocityX / 60
+        particle.y += particle.velocityY / 60
+        particle.life -= 1 / 60
+
+        context.beginPath()
+        context.moveTo(particle.previousX, particle.previousY)
+        context.lineTo(particle.x, particle.y)
+        context.strokeStyle = particle.color
+        context.globalAlpha = Math.max(particle.life / particle.maxLife, 0)
+        context.lineWidth = particle.size
+        context.stroke()
+
+        if (particle.life <= 0) particles.splice(index, 1)
+      })
+
+      context.globalAlpha = 1
+      animationFrame = requestAnimationFrame(animateFireworks)
+    }
+
+    resizeCanvas()
+    const resizeObserver = new ResizeObserver(resizeCanvas)
+    resizeObserver.observe(button)
+    animationFrame = requestAnimationFrame(animateFireworks)
+
+    return () => {
+      cancelAnimationFrame(animationFrame)
+      resizeObserver.disconnect()
+    }
   }, [])
 
   return (
     <main className="invitation-page">
+      {!isInvitationOpen && (
+        <section className="envelope-screen" aria-label="Thiệp mời cưới">
+          <div className="envelope-card">
+            <img className="envelope-flower envelope-flower-top" src={flower1} alt="" />
+            <img className="envelope-flower envelope-flower-bottom" src={flower3} alt="" />
+            <div className="envelope-content">
+              <h1>Thu Hiền <span>&amp;</span> Việt Long</h1>
+              <button className="smoke-open-button" type="button" onClick={openInvitation}>
+                <canvas ref={fireworkCanvasRef} className="firework-canvas" aria-hidden="true" />
+                <span className="smoke-button-label">Click để mở thiệp mời</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <button
+        className={`music-toggle${isMusicPlaying ? ' is-playing' : ''}`}
+        type="button"
+        onClick={toggleMusic}
+        aria-label={isMusicPlaying ? 'Tắt nhạc nền' : 'Bật nhạc nền'}
+        aria-pressed={isMusicPlaying}
+      >
+        <span className="music-floating-note note-one" aria-hidden="true">♪</span>
+        <span className="music-floating-note note-two" aria-hidden="true">♫</span>
+        <span className="music-floating-note note-three" aria-hidden="true">♪</span>
+        <span className="music-floating-note note-four" aria-hidden="true">♩</span>
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path className="music-note" d="M12 23.5V8.8l12-2.3v13.7" />
+          <circle className="music-note" cx="9" cy="24" r="3.5" />
+          <circle className="music-note" cx="21" cy="20.5" r="3.5" />
+          <path className="music-wave wave-one" d="M26.5 11.5c1.2 1.5 1.2 3.5 0 5" />
+          <path className="music-wave wave-two" d="M29 9.5c2.1 2.7 2.1 6.3 0 9" />
+        </svg>
+      </button>
+
+      <audio ref={audioRef} loop preload="auto">
+        <source
+          src={`${import.meta.env.BASE_URL}music/05-Walk-the-Good-Path.mp3`}
+          type="audio/mpeg"
+        />
+      </audio>
+
       <div
         className="photo-backdrop"
         style={{ backgroundImage: `url(${couplePhoto})` }}
@@ -43,6 +220,7 @@ function App() {
       />
 
       <article className="invitation-card reveal-item" data-reveal>
+
         <div className="invitation-title">
           <p className="eyebrow">Save &nbsp; The &nbsp;  Date</p>
         </div>
@@ -94,7 +272,7 @@ function App() {
           <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời</h2>
           <strong className="guest-name">{guest.name}</strong>
           <p className="story-heading">
-             tới dự tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
+            tới dự tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
           </p>
         </div>
         <p className="ceremony-date">Thời gian:<strong className="date-time"> 14h - 17h Thứ 7 ngày 31/10/2026 </strong></p>
@@ -152,7 +330,7 @@ function App() {
           {/* <p className="dress-code-kicker">Note nhỏ cho khách mời</p> */}
           <h2 className="dress-code-heading" id="dress-code-heading">Dress code</h2>
           <p className="dress-code-message">
-            Gợi ý màu sắc trang phục trong trường hợp bạn ko biết chọn màu gì 
+            Gợi ý màu sắc trang phục trong trường hợp bạn ko biết chọn màu gì
           </p>
           <div className="dress-code-palette" aria-label="Các màu decor">
             <span className="dress-code-color">
