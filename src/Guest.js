@@ -1,7 +1,7 @@
 export const guests = [
   {
     id: "chi-meu",
-    name: "Chị Mều",
+    name: "Chị Mèo",
     formOfAddress: "chúng em",
   },
   {
