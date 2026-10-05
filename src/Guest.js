@@ -144,6 +144,12 @@ export const guests = [
     formOfAddress: "anh chị",
     partyOverview: "Anh chị muốn một buổi tiệc cưới trẻ trung, vui vẻ, dễ chịu nên rất welcome khách mời hợp vibe như em.  Hãy đến và cùng chia sẻ niềm vui \"kết đôi\" với cô dâu chú rể nhé.",
   },
+  {
+    id: "long-bk",
+    name: "bạn Long",
+    formOfAddress: "Chúng tôi",
+    partyOverview: "Chúng tôi tổ chức một buổi tiệc trà nhỏ để mời bạn bè thân thiết tới tán gẫu và ăn uống nhẹ nhàng. Tiệc là phụ, chill là chính. Hãy đến và chia sẻ niềm vui \"kết đôi\" cùng với cô dâu chú rể nhé.",
+  },
 ]
 
 export function getGuestFromUrl() {
