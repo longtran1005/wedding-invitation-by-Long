@@ -147,7 +147,7 @@ export const guests = [
   {
     id: "long-bk",
     name: "bạn Long",
-    formOfAddress: "Chúng tôi",
+    formOfAddress: "chúng tôi",
     partyOverview: "Chúng tôi tổ chức một buổi tiệc trà nhỏ để mời bạn bè thân thiết tới tán gẫu và ăn uống nhẹ nhàng. Tiệc là phụ, chill là chính. Hãy đến và chia sẻ niềm vui \"kết đôi\" cùng với cô dâu chú rể nhé.",
   },
 ]
