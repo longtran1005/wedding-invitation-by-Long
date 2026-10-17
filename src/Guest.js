@@ -156,6 +156,20 @@ export const guests = [
     formOfAddress: "chúng tôi",
     partyOverview: "Chúng tôi tổ chức một buổi tiệc trà nhỏ để mời bạn bè thân thiết tới tán gẫu và ăn uống nhẹ nhàng. Tiệc là phụ, chill là chính. Hãy đến và chia sẻ niềm vui \"kết đôi\" cùng với cô dâu chú rể nhé.",
   },
+  {
+    id: "mai-hop",
+    isSpecial: true,
+    name: "Mai và Hợp",
+    formOfAddress: "chúng tôi",
+    partyOverview: "Anh chị Khánh Dụ mời hai em đến dự tiệc cưới của cháu Mực. Anh chị rất mong hai em thu xếp thời gian về chung vui cùng gia đình trong ngày đặc biệt này. Hẹn gặp hai em trong ngày vui của cháu nhé!",
+  },
+  {
+    id: "thang-chung",
+    isSpecial: true,
+    name: "Thắng và Chung",
+    formOfAddress: "chúng tôi",
+    partyOverview: "Anh chị Khánh Dụ gửi lời mời hai em và gia đình đến chung vui nhân dịp đám cưới của cháu Mực. Biết hai em ở xa, anh chị vẫn gửi thiệp mời thay lời báo tin và chia sẻ niềm vui của gia đình.",
+  },
 ]
 
 export function getGuestFromUrl() {

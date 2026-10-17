@@ -15,6 +15,36 @@ import { getGuestFromUrl } from "./Guest.js";
 
 function App() {
   const guest = getGuestFromUrl()
+  const eventDate = guest.isSpecial
+    ? { year: 2026, month: 11, day: 14 }
+    : { year: 2026, month: 10, day: 31 }
+  const eventDateObject = new Date(Date.UTC(eventDate.year, eventDate.month - 1, eventDate.day))
+  const eventDateIso = `${eventDate.year}-${String(eventDate.month).padStart(2, '0')}-${String(eventDate.day).padStart(2, '0')}`
+  const eventDateDisplay = `${String(eventDate.day).padStart(2, '0')}.${String(eventDate.month).padStart(2, '0')}.${eventDate.year}`
+  const ceremonyDateDisplay = `${eventDate.day}/${eventDate.month}/${eventDate.year}`
+  const weekdayNames = ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7']
+  const calendarMonthNames = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
+  const calendarFirstWeekday = (new Date(Date.UTC(eventDate.year, eventDate.month - 1, 1)).getUTCDay() + 6) % 7
+  const calendarDaysInMonth = new Date(Date.UTC(eventDate.year, eventDate.month, 0)).getUTCDate()
+  const calendarDaysInPreviousMonth = new Date(Date.UTC(eventDate.year, eventDate.month - 1, 0)).getUTCDate()
+  const calendarTrailingDays = (7 - ((calendarFirstWeekday + calendarDaysInMonth) % 7)) % 7
+  const calendarDays = [
+    ...Array.from({ length: calendarFirstWeekday }, (_, index) => ({
+      day: calendarDaysInPreviousMonth - calendarFirstWeekday + index + 1,
+      isMuted: true,
+      key: `previous-${index}`,
+    })),
+    ...Array.from({ length: calendarDaysInMonth }, (_, index) => ({
+      day: index + 1,
+      isMuted: false,
+      key: `current-${index}`,
+    })),
+    ...Array.from({ length: calendarTrailingDays }, (_, index) => ({
+      day: index + 1,
+      isMuted: true,
+      key: `next-${index}`,
+    })),
+  ]
   const audioRef = useRef(null)
   const fireworkCanvasRef = useRef(null)
   const [isInvitationOpen, setIsInvitationOpen] = useState(false)
@@ -242,7 +272,7 @@ function App() {
 
         <div className="names-block">
           <h1>Thu Hiền <span>&amp;</span> Việt Long</h1>
-          <time dateTime="2026-10-31">31.10.2026</time>
+          <time dateTime={eventDateIso}>{eventDateDisplay}</time>
         </div>
       </article>
 
@@ -284,38 +314,36 @@ function App() {
           <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời</h2>
           <strong className="guest-name">{guest.name}</strong>
           <p className="story-heading">
-            tới dự tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡
+            {guest.isSpecial
+              ? <>tới dự tiệc cưới của <span>hai cháu</span> ♡</>
+              : <>tới dự tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡</>}
           </p>
         </div>
-        <p className="ceremony-date">Thời gian:<strong className="date-time"> 14h - 17h Thứ 7 ngày 31/10/2026 </strong></p>
+        <p className="ceremony-date">Thời gian:<strong className="date-time"> {guest.isSpecial ? '11h30' : '14h - 17h'} {weekdayNames[eventDateObject.getUTCDay()]} ngày {ceremonyDateDisplay} </strong></p>
 
-        <div className="calendar" data-reveal="diagonal" aria-label="Lịch tháng 10 năm 2026">
+        <div className="calendar" data-reveal="diagonal" aria-label={`Lịch ${calendarMonthNames[eventDate.month - 1].toLowerCase()} năm ${eventDate.year}`}>
           <div className="calendar-header">
-            <p className="calendar-month">Tháng 10</p>
-            <p className="calendar-month">2026</p>
+            <p className="calendar-month">{calendarMonthNames[eventDate.month - 1]}</p>
+            <p className="calendar-month">{eventDate.year}</p>
           </div>
           <div className="calendar-grid">
             {['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'].map((day) => (
               <span className="calendar-weekday" key={day}>{day}</span>
             ))}
-            <span className="calendar-day calendar-muted">28</span>
-            <span className="calendar-day calendar-muted">29</span>
-            <span className="calendar-day calendar-muted">30</span>
-            {Array.from({ length: 31 }, (_, index) => {
-              const day = index + 1
+            {calendarDays.map(({ day, isMuted, key }) => {
+              const isEventDay = !isMuted && day === eventDate.day
               return (
-                <span className={`calendar-day${day === 31 ? ' is-highlighted' : ''}`} key={day}>
-                  {day === 31 && <span className="heart-mark">♡</span>}
+                <span className={`calendar-day${isMuted ? ' calendar-muted' : ''}${isEventDay ? ' is-highlighted' : ''}`} key={key} aria-label={isEventDay ? `Ngày ${day}, ngày cưới` : undefined}>
+                  {isEventDay && <span className="heart-mark">♡</span>}
                   <span>{day}</span>
                 </span>
               )
             })}
-            <span className="calendar-day calendar-muted">1</span>
           </div>
         </div>
-        <p className="ceremony-date">Địa điểm:<strong className="date-time"> Oho Coffee & Camping BBQ Ecopark </strong></p>
-        <p className="ceremony-address">Đ. Thủy Nguyên, Khu đô thị Ecopark, Phụng Công, Hưng Yên, Vietnam </p>
-        <div className="map-embed" data-reveal="diagonal">
+        <p className="ceremony-date">Địa điểm:<strong className="date-time"> Thanh Thủy Palace </strong></p>
+        <p className="ceremony-address">609 Trương Định - Hoàng Mai - Hà Nội</p>
+        {!guest.isSpecial && (<><div className="map-embed" data-reveal="diagonal">
           <iframe
             src="https://www.google.com/maps?q=20.9473791,105.9344606&z=17&output=embed"
             title="Bản đồ địa điểm tổ chức tiệc cưới"
@@ -334,10 +362,10 @@ function App() {
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg> &nbsp;  Xem đường đi trên Google Maps
-        </a>
+        </a> </>)}
       </article>
 
-      <article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
+      {!guest.isSpecial && <article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
         <div className="dress-code-copy">
           {/* <p className="dress-code-kicker">Note nhỏ cho khách mời</p> */}
           <h2 className="dress-code-heading" id="dress-code-heading">Dress code</h2>
@@ -379,9 +407,9 @@ function App() {
             </span>
           </div>
         </div>
-      </article>
+      </article> }
 
-      <Reserve guest={guest} />
+      {!guest.isSpecial && <Reserve guest={guest} />}
     </main>
   )
 }
