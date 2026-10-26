@@ -160,13 +160,13 @@ export const guests = [
     id: "ngoc-hieu",
     name: "Ngọc Hiếu",
     formOfAddress: "chúng mình",
-    partyOverview: "Long và Hiền xin gửi lời mời Ngọc Hiếu đến chung vui cùng chúng mình trong buổi tiệc trà mừng ngày cưới. Dù ở xa, chúng mình vẫn mong được chia sẻ niềm vui đặc biệt này cùng Hiếu. Hy vọng chúng ta sẽ sớm có dịp gặp lại nhau!",
+    partyOverview: "Nhân dịp dọn về chung sống, chúng mình tổ chức một buổi tiệc trà thân mật. Đây là dịp đặc biệt mà chúng mình rất mong được chia sẻ với những người thân quý. Thân mời Ngọc Hiếu đến chung vui với cô dâu chú rể! Hy vọng sẽ sớm có dịp gặp lại Hiếu!",
   },
   {
     id: "thanh-hang",
     name: "Thanh Hằng",
     formOfAddress: "chúng mình",
-    partyOverview: "Long và Hiền xin gửi lời mời Thanh Hằng đến chung vui cùng chúng mình trong buổi tiệc trà mừng ngày cưới. Đây là dịp đặc biệt mà chúng mình rất mong được chia sẻ niềm vui với những người thân quý. Hy vọng sẽ sớm có dịp gặp lại Hằng!",
+    partyOverview: "Nhân dịp dọn về chung sống, chúng mình tổ chức một buổi tiệc trà thân mật. Đây là dịp đặc biệt mà chúng mình rất mong được chia sẻ với những người thân quý. Thân mời Hằng đến chung vui với cô dâu chú rể! Hy vọng sẽ sớm có dịp gặp lại Hằng! ",
   },
   {
     id: "mai-hop",
