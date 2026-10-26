@@ -159,14 +159,16 @@ export const guests = [
   {
     id: "ngoc-hieu",
     name: "Ngọc Hiếu",
+    isTeaSpecial: true,
     formOfAddress: "chúng mình",
-    partyOverview: "Nhân dịp dọn về chung sống, chúng mình tổ chức một buổi tiệc trà thân mật. Đây là dịp đặc biệt mà chúng mình rất mong được chia sẻ với những người thân quý. Thân mời Ngọc Hiếu đến chung vui với cô dâu chú rể! Hy vọng sẽ sớm có dịp gặp lại Hiếu!",
+    partyOverview: "Long và Hiền thân mời bạn đến chung vui nhân dịp đám cưới của chúng mình. Dù bạn ở xa, chúng mình vẫn gửi thiệp mời thay lời báo tin và chia sẻ niềm vui kết đôi.",
   },
   {
     id: "thanh-hang",
     name: "Thanh Hằng",
+    isTeaSpecial: true,
     formOfAddress: "chúng mình",
-    partyOverview: "Nhân dịp dọn về chung sống, chúng mình tổ chức một buổi tiệc trà thân mật. Đây là dịp đặc biệt mà chúng mình rất mong được chia sẻ với những người thân quý. Thân mời Hằng đến chung vui với cô dâu chú rể! Hy vọng sẽ sớm có dịp gặp lại Hằng! ",
+    partyOverview: "Long và Hiền thân mời bạn đến chung vui nhân dịp đám cưới của chúng mình. Dù bạn ở xa, chúng mình vẫn gửi thiệp mời thay lời báo tin và chia sẻ niềm vui kết đôi. ",
   },
   {
     id: "mai-hop",

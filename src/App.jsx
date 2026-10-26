@@ -352,7 +352,7 @@ function App() {
           <p className="ceremony-address">609 Trương Định - Hoàng Mai - Hà Nội</p>
           </>
         )}
-        {!guest.isSpecial && (<><div className="map-embed" data-reveal="diagonal">
+        {!guest.isSpecial && !guest.isTeaSpecial && (<><div className="map-embed" data-reveal="diagonal">
           <iframe
             src="https://www.google.com/maps?q=20.9473791,105.9344606&z=17&output=embed"
             title="Bản đồ địa điểm tổ chức tiệc cưới"
@@ -374,7 +374,7 @@ function App() {
         </a> </>)}
       </article>
 
-      {!guest.isSpecial && <article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
+      {!guest.isSpecial && !guest.isTeaSpecial && <article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
         <div className="dress-code-copy">
           {/* <p className="dress-code-kicker">Note nhỏ cho khách mời</p> */}
           <h2 className="dress-code-heading" id="dress-code-heading">Dress code</h2>
@@ -418,7 +418,7 @@ function App() {
         </div>
       </article> }
 
-      {!guest.isSpecial && <Reserve guest={guest} />}
+      {!guest.isSpecial && !guest.isTeaSpecial && <Reserve guest={guest} />}
     </main>
   )
 }
