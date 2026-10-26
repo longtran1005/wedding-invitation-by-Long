@@ -341,8 +341,17 @@ function App() {
             })}
           </div>
         </div>
-        <p className="ceremony-date">Địa điểm:<strong className="date-time"> Thanh Thủy Palace </strong></p>
-        <p className="ceremony-address">609 Trương Định - Hoàng Mai - Hà Nội</p>
+
+        {!guest.isSpecial && (
+          <><p className="ceremony-date">Địa điểm:<strong className="date-time"> Oho Coffee & Camping BBQ Ecopark </strong></p>
+          <p className="ceremony-address">Đ. Thủy Nguyên, Khu đô thị Ecopark, Phụng Công, Hưng Yên, Vietnam </p>
+          </>
+        )}
+        {guest.isSpecial && (
+          <><p className="ceremony-date">Địa điểm:<strong className="date-time"> Thanh Thủy Palace </strong></p>
+          <p className="ceremony-address">609 Trương Định - Hoàng Mai - Hà Nội</p>
+          </>
+        )}
         {!guest.isSpecial && (<><div className="map-embed" data-reveal="diagonal">
           <iframe
             src="https://www.google.com/maps?q=20.9473791,105.9344606&z=17&output=embed"
