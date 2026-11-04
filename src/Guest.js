@@ -184,6 +184,13 @@ export const guests = [
     formOfAddress: "chúng tôi",
     partyOverview: "Anh chị Khánh Dụ gửi lời mời hai em và gia đình đến chung vui nhân dịp đám cưới của cháu Mực. Biết hai em ở xa, anh chị vẫn gửi thiệp mời thay lời báo tin và chia sẻ niềm vui của gia đình.",
   },
+    {
+    id: "chi-hoa",
+    isSpecial2: true,
+    name: "chị Hòa",
+    formOfAddress: "chúng em",
+    partyOverview: "Em Long mời chị Hòa cùng anh chồng đến dự tiệc cưới truyền thống của hai chúng em. Vì đã miss tiệc trà thân mật nên rất mong được tiếp đón anh chị tại bữa tiệc này",
+  },
 ]
 
 export function getGuestFromUrl() {

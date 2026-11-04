@@ -15,7 +15,7 @@ import { getGuestFromUrl } from "./Guest.js";
 
 function App() {
   const guest = getGuestFromUrl()
-  const eventDate = guest.isSpecial
+  const eventDate = (guest.isSpecial || guest.isSpecial2)
     ? { year: 2026, month: 11, day: 14 }
     : { year: 2026, month: 10, day: 31 }
   const eventDateObject = new Date(Date.UTC(eventDate.year, eventDate.month - 1, eventDate.day))
@@ -316,10 +316,11 @@ function App() {
           <p className="story-heading">
             {guest.isSpecial
               ? <>tới dự tiệc cưới của <span>hai cháu</span> ♡</>
+              : guest.isSpecial2 ? <>tới dự tiệc cưới của <span>{guest.formOfAddress}</span> ♡</>
               : <>tới dự tiệc cưới thân mật của <span>{guest.formOfAddress}</span> ♡</>}
           </p>
         </div>
-        <p className="ceremony-date">Thời gian:<strong className="date-time"> {guest.isSpecial ? '11h30' : '14h - 17h'} {weekdayNames[eventDateObject.getUTCDay()]} ngày {ceremonyDateDisplay} </strong></p>
+        <p className="ceremony-date">Thời gian:<strong className="date-time"> {(guest.isSpecial || guest.isSpecial2) ? '11h30' : '14h - 17h'} {weekdayNames[eventDateObject.getUTCDay()]} ngày {ceremonyDateDisplay} </strong></p>
 
         <div className="calendar" data-reveal="diagonal" aria-label={`Lịch ${calendarMonthNames[eventDate.month - 1].toLowerCase()} năm ${eventDate.year}`}>
           <div className="calendar-header">
@@ -342,17 +343,17 @@ function App() {
           </div>
         </div>
 
-        {!guest.isSpecial && (
+        {!(guest.isSpecial || guest.isSpecial2) && (
           <><p className="ceremony-date">Địa điểm:<strong className="date-time"> Oho Coffee & Camping BBQ Ecopark </strong></p>
           <p className="ceremony-address">Đ. Thủy Nguyên, Khu đô thị Ecopark, Phụng Công, Hưng Yên, Vietnam </p>
           </>
         )}
-        {guest.isSpecial && (
+        {(guest.isSpecial || guest.isSpecial2) && (
           <><p className="ceremony-date">Địa điểm:<strong className="date-time"> Thanh Thủy Palace </strong></p>
           <p className="ceremony-address">609 Trương Định - Hoàng Mai - Hà Nội</p>
           </>
         )}
-        {!guest.isSpecial && !guest.isTeaSpecial && (<><div className="map-embed" data-reveal="diagonal">
+        {!(guest.isSpecial || guest.isSpecial2) && !guest.isTeaSpecial && (<><div className="map-embed" data-reveal="diagonal">
           <iframe
             src="https://www.google.com/maps?q=20.9473791,105.9344606&z=17&output=embed"
             title="Bản đồ địa điểm tổ chức tiệc cưới"
@@ -369,12 +370,12 @@ function App() {
         >
           <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
+            <circle cx="12" cy="10" r="3"></circle> 
           </svg> &nbsp;  Xem đường đi trên Google Maps
         </a> </>)}
       </article>
 
-      {!guest.isSpecial && !guest.isTeaSpecial && <article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
+      {!guest.isSpecial && !guest.isTeaSpecial && !guest.isSpecial2 &&<article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
         <div className="dress-code-copy">
           {/* <p className="dress-code-kicker">Note nhỏ cho khách mời</p> */}
           <h2 className="dress-code-heading" id="dress-code-heading">Dress code</h2>
@@ -418,7 +419,7 @@ function App() {
         </div>
       </article> }
 
-      {!guest.isSpecial && !guest.isTeaSpecial && <Reserve guest={guest} />}
+      {!guest.isSpecial && !guest.isTeaSpecial && !guest.isSpecial2 && <Reserve guest={guest} />}
     </main>
   )
 }
