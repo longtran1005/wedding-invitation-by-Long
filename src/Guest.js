@@ -47,7 +47,9 @@ export const guests = [
   {
     id: "nhi",
     name: "bạn Nhi",
+    isSpecial2: true,
     formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
   },
   {
     id: "huy",
@@ -67,7 +69,9 @@ export const guests = [
   {
     id: "lan",
     name: "bạn Lan",
+    isSpecial2: true,
     formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
   },
   {
     id: "thao-cap-3",
@@ -77,7 +81,9 @@ export const guests = [
   {
     id: "thuy",
     name: "bạn Thủy",
+    isSpecial2: true,
     formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
   },
   {
     id: "thao-cao-dang",
@@ -190,6 +196,28 @@ export const guests = [
     name: "chị Hòa",
     formOfAddress: "chúng em",
     partyOverview: "Em Long mời chị Hòa cùng anh chồng đến dự tiệc cưới truyền thống của hai chúng em. Vì đã miss tiệc trà thân mật nên rất mong được tiếp đón anh chị tại bữa tiệc này",
+  },
+  {
+    id: "chi-phuong",
+    isSpecial2: true,
+    isAnnouncementOnly: true,
+    name: "chị Phương",
+    formOfAddress: "chị",
+    partyOverview: "Vì chị đang ở nước ngoài nên không thể về tham dự, chúng em xin gửi chị tấm thiệp báo hỷ, kính báo tin vui và mong được chia sẻ niềm hạnh phúc trong ngày trọng đại cùng chị.",
+  },
+  {
+    id: "tua-truc-hien-a-quynh-d",
+    isSpecial2: true,
+    name: "Tua trực Hiền A - Quỳnh D",
+    formOfAddress: "các bạn",
+    partyOverview: "Chúng mình trân trọng mời các bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
+  },
+  {
+    id: "thao-tiec-chinh",
+    isSpecial2: true,
+    name: "bạn Thảo",
+    formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
   },
 ]
 

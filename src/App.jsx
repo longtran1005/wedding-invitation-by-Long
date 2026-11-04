@@ -13,6 +13,30 @@ import flower3 from '../images/flower/flower3.png'
 import Reserve from "./Reserve.jsx";
 import { getGuestFromUrl } from "./Guest.js";
 
+const landscapeTeaPartyPhotos = new Set([
+  'LVT02786.jpg',
+  '1793634810340_5989368767169779844_5989368767169779844_14bb18599a18f2b529804bd7847100fe.jpg',
+])
+const teaPartyPhotos = Object.entries(
+  import.meta.glob('../images/tiec tra/*.{jpg,jpeg,png,webp}', {
+    eager: true,
+    import: 'default',
+  }),
+)
+  .map(([path, src]) => ({
+    path,
+    src,
+    isLandscape: landscapeTeaPartyPhotos.has(path.split('/').pop()),
+  }))
+  .sort((first, second) =>
+    Number(first.isLandscape) - Number(second.isLandscape) || first.path.localeCompare(second.path),
+  )
+  .map(({ src, isLandscape }, index) => ({
+    src,
+    isLandscape,
+    alt: `Ảnh tiệc trà ${index + 1}`,
+  }))
+
 function App() {
   const guest = getGuestFromUrl()
   const eventDate = (guest.isSpecial || guest.isSpecial2)
@@ -309,7 +333,7 @@ function App() {
         </div>
       </article>
 
-      <article className="ceremony-section reveal-item" data-reveal aria-labelledby="ceremony-heading">
+      {!guest.isAnnouncementOnly && <article className="ceremony-section reveal-item" data-reveal aria-labelledby="ceremony-heading">
         <div className="ceremony-visual">
           <h2 className="ceremony-heading" id="ceremony-heading">Thân Mời</h2>
           <strong className="guest-name">{guest.name}</strong>
@@ -373,7 +397,7 @@ function App() {
             <circle cx="12" cy="10" r="3"></circle> 
           </svg> &nbsp;  Xem đường đi trên Google Maps
         </a> </>)}
-      </article>
+      </article>}
 
       {!guest.isSpecial && !guest.isTeaSpecial && !guest.isSpecial2 &&<article className="dress-code-section reveal-item" data-reveal aria-labelledby="dress-code-heading">
         <div className="dress-code-copy">
@@ -420,6 +444,15 @@ function App() {
       </article> }
 
       {!guest.isSpecial && !guest.isTeaSpecial && !guest.isSpecial2 && <Reserve guest={guest} />}
+
+      {guest.isSpecial2 && <section className="tea-party-album reveal-item" data-reveal aria-labelledby="tea-party-album-heading">
+        <h2 className="tea-party-album-heading" id="tea-party-album-heading">Album ảnh</h2>
+        <div className="tea-party-album-grid">
+          {teaPartyPhotos.map(({ src, isLandscape, alt }) => (
+            <img key={src} className={isLandscape ? 'is-landscape' : undefined} src={src} alt={alt} loading="lazy" />
+          ))}
+        </div>
+      </section>}
     </main>
   )
 }
