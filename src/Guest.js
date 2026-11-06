@@ -218,6 +218,34 @@ export const guests = [
     formOfAddress: "chúng mình",
     partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
   },
+  {
+    id: "lien-huong",
+    isSpecial2: true,
+    name: "Liên Hương",
+    formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
+  },
+  {
+    id: "thanh-tu",
+    isSpecial2: true,
+    name: "Thanh Tú",
+    formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
+  },
+  {
+    id: "cam-anh",
+    isSpecial2: true,
+    name: "Cẩm Anh",
+    formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
+  },
+  {
+    id: "thuy-quynh",
+    isSpecial2: true,
+    name: "Thúy Quỳnh",
+    formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
+  },
 ]
 
 export function getGuestFromUrl() {
