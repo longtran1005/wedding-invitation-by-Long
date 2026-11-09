@@ -250,8 +250,8 @@ export const guests = [
     id: "hoang-long-9a",
     isSpecial2: true,
     name: "Hoàng Long",
-    formOfAddress: "chúng mình",
-    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
+    formOfAddress: "chúng tôi",
+    partyOverview: "Chúng tôi trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng tôi trong ngày đặc biệt này.",
   },
   {
     id: "thuy-linh-9a",
