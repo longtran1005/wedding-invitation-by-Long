@@ -267,6 +267,13 @@ export const guests = [
     formOfAddress: "chúng mình",
     partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
   },
+  {
+    id: "ngoc-anh-9a",
+    isSpecial2: true,
+    name: "Ngọc Anh",
+    formOfAddress: "chúng mình",
+    partyOverview: "Chúng mình trân trọng mời bạn đến dự lễ cưới truyền thống và chung vui cùng chúng mình trong ngày đặc biệt này.",
+  },
 ]
 
 export function getGuestFromUrl() {
